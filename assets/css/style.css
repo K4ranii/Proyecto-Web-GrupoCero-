@@ -692,7 +692,6 @@ section {
   font-size: 14px;
 }
 #about img {
-  margin-top: 1cm;
   max-width: 100%; 
   max-height: 500px;
   border-radius: 0.5cm;
@@ -896,6 +895,10 @@ section {
   transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+#portFolio .portfolio-item p{
+
+  visibility: hidden;
+}
 #portfolio .portfolio-item .portfolio-info {
   opacity: 0;
   position: absolute;
@@ -1126,7 +1129,7 @@ section {
   color: #fff;
 }
 
-#contact .php-email-form .error-message {
+#contact .email-form .error-message {
   display: none;
   color: #fff;
   background: #ed3c0d;
@@ -1135,11 +1138,11 @@ section {
   font-weight: 600;
 }
 
-#contact .php-email-form .error-message br+br {
+#contact .email-form .error-message br+br {
   margin-top: 25px;
 }
 
-#contact .php-email-form .sent-message {
+#contact .email-form .sent-message {
   display: none;
   color: #fff;
   background: #18d26e;
@@ -1148,14 +1151,14 @@ section {
   font-weight: 600;
 }
 
-#contact .php-email-form .loading {
+#contact .email-form .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
 }
 
-#contact .php-email-form .loading:before {
+#contact .email-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -1167,19 +1170,19 @@ section {
   animation: animate-loading 1s linear infinite;
 }
 
-#contact .php-email-form input,
-#contact .php-email-form textarea {
+#contact .email-form input,
+#contact .email-form textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
 }
 
-#contact .php-email-form input::focus,
-#contact .php-email-form textarea::focus {
+#contact .email-form input::focus,
+#contact .email-form textarea::focus {
   background-color: #2dc997;
 }
 
-#contact .php-email-form button[type=submit] {
+#contact .email-form button[type=submit] {
   background: #2dc997;
   border: 0;
   padding: 10px 24px;
@@ -1187,7 +1190,7 @@ section {
   transition: 0.4s;
 }
 
-#contact .php-email-form button[type=submit]:hover {
+#contact .email-form button[type=submit]:hover {
   background: #51d8ad;
 }
 
@@ -1307,6 +1310,43 @@ section {
 }
 
 
+/* Estilizado de galeria de imágenes*/
 
 
-/* End Estilos detalle */
+
+
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+  font-size: 1.25rem;
+  color: white;
+}
+#portfolio .portfolio-item .portfolio-link:hover .portfolio-hover {
+  opacity: 1;
+}
+#portfolio .portfolio-item .portfolio-caption {
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #fff;
+}
+#portfolio .portfolio-item .portfolio-caption .portfolio-caption-heading {
+  font-size: 1.5rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  margin-bottom: 0;
+}
+#portfolio .portfolio-item .portfolio-caption .portfolio-caption-subheading {
+  font-style: italic;
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+.portfolio-item img {
+  width: 500px;
+  min-height: 300px;
+  max-height: 360px;
+}
+
+a.twitter i, a.facebook i, a.instagram i, a.linkedin i {
+  font-size: 20px;
+}
+/* Fin estilos galeria y POPUP */
