@@ -249,55 +249,27 @@
         </div>
         <div class="row justify-content-center">
 
-          
-          <div class="col-lg-3 col-md-4">
-
-            <div class="info">
-              <div>
-                <i class="bi bi-geo-alt"></i>
-                <p>A108 Adam Street<br>New York, NY 535022</p>
-              </div>
-
-              <div>
-                <i class="bi bi-envelope"></i>
-                <p>info@example.com</p>
-              </div>
-              <div>
-                <i class="bi bi-binoculars"></i>
-                <p>busqueda</p>
-              </div>
-
-              <div>
-                <i class="bi bi-phone"></i>
-                <p>+1 5589 55488 55s</p>
-              </div>
-            </div>
-
-            <div class="social-links">
-              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            </div>
-
-          </div>
-
           <div class="col-lg-5 col-md-8">
             <div class="form">
             
               <form class="php-email-form" name="formulario" onsubmit="return validarFormulario()">
-                <label>Ingrese su nombre</label>
-                <input type="text" name="name" class="form-control" id="name" placeholder="tu nombre" required><br>
-                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="tu apellido" required><br>
-                <input type="number" name="edad" class="form-control" id="edad" min="18" max="100" placeholder="tu edad" required><br>
-                <input type="email" class="form-control" name="email" id="email" placeholder="e-mail" required><br>
-                <input type="date" name="fecha-llegada" class="form-control" required><br>
+
+                <input type="text" name="nombre" class="form-control" id="name" placeholder="tu nombre" required><br>
+
+                <input type="text" name="apellido" class="form-control" id="lastname" placeholder="tu apellido" required><br>
+
+                <input type="text" name="rut" class="form-control" id="Rut" min="9" max="9" placeholder="rut" required><br>
+
+                <input type="text" name="localidad" class="form-control" id="localidad" placeholder="localidad" required><br>
+
+                <input type="number" name="edad" class="form-control" id="edad" min="18" max="100"  placeholder="tu edad" required><br>
+
+                <input type="email"  name="correo" class="form-control" id="email" placeholder="e-mail" required><br>
+
+                <input type="date" name="fechaVisita" class="form-control" required><br>
               
                 <div class="text-center"><button type="submit">Reservar Visita</button></div>
               </form>
-
-
-
 
             </div>
           </div>
@@ -354,6 +326,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/validacionesFormularios.js"></script>
+
 
 
 
