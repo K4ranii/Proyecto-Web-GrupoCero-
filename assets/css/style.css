@@ -1349,4 +1349,12 @@ section {
 a.twitter i, a.facebook i, a.instagram i, a.linkedin i {
   font-size: 20px;
 }
+
+.clock {
+  display: inline-block;
+  font-size: 2em;
+  font-weight: bold;
+  color: #444;
+  text-shadow: 1px 1px #fff;
+}
 /* Fin estilos galeria y POPUP */
