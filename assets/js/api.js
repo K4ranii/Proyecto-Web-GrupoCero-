@@ -6,7 +6,6 @@ portfolioItems.forEach((item, index) => {
   const artworkId = (index + 1) * 95; // Calcular el ID de la obra de arte
   const imgElement = item.querySelector("img"); // Obtener la etiqueta <img> dentro de la columna
   const titleElement = item.querySelector(".portfolio-caption-heading"); // Obtener el elemento HTML para el título de la obra de arte
-  const descElement = item.querySelector(".portfolio-caption-subheading"); // Obtener el elemento HTML para la descripción de la obra de arte
   const apiUrl = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${artworkId}`; // URL de la API con el ID de la obra de arte
 
   fetch(apiUrl)
@@ -14,11 +13,9 @@ portfolioItems.forEach((item, index) => {
     .then(data => {
       const imageUrl = data.primaryImageSmall;
       const title = data.title;
-      const description = data.objectDate;
 
       imgElement.src = imageUrl;
       titleElement.textContent = title;
-      descElement.textContent = description;
     })
     .catch(error => {
       console.error(error);
