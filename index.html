@@ -252,17 +252,20 @@
           <div class="col-lg-5 col-md-8">
             <div class="form">
             
-              <form class="php-email-form" name="formulario" onsubmit="return validarFormulario()">
+              <form class="email-form" name="formulario" onsubmit="return validarFormulario()">
 
-                <input type="text" name="nombre" class="form-control" id="name" placeholder="tu nombre" required><br>
+                <input type="text" name="nombre" class="form-control" id="name" placeholder="Tu nombre" required><br>
 
-                <input type="text" name="apellido" class="form-control" id="lastname" placeholder="tu apellido" required><br>
+                <input type="text" name="apellido" class="form-control" id="lastname" placeholder="Tu apellido" required><br>
+                <select name="comuna" id="comuna" class="form-control" required>
+                  <option value="">Seleccione una comuna</option>
+                  <!-- Agregar más opciones de comunas aquí -->
+                </select><br>
 
-                <input type="text" name="rut" class="form-control" id="Rut" min="9" max="9" placeholder="rut" required><br>
+                <input type="text" name="rut" class="form-control" id="Rut" min="9" max="9" placeholder="Rut" required><br>
 
-                <input type="text" name="localidad" class="form-control" id="localidad" placeholder="localidad" required><br>
 
-                <input type="number" name="edad" class="form-control" id="edad" min="18" max="100"  placeholder="tu edad" required><br>
+                <input type="number" name="edad" class="form-control" id="edad" min="18" max="100"  placeholder="Tu edad" required><br>
 
                 <input type="email"  name="correo" class="form-control" id="email" placeholder="e-mail" required><br>
 
