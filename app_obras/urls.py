@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import index, nosotros,galeria,administracion,crear,mostrar, eliminar, modificar
+from app_obras.views import *
 
 urlpatterns = [
     path('', index,name='index'),
@@ -10,5 +10,12 @@ urlpatterns = [
     path('mostrar.html', mostrar,name='mostrar'),
     path('eliminar/<obra_id>', eliminar, name="eliminar"),
     path('modificar/<obra_id>', modificar, name="modificar"),
+
+
+    path('generarBoleta/', generarBoleta,name="generarBoleta"),
+    path('agregar/<id>', agregar_producto, name="agregar"),
+    path('eliminar/<id>', eliminar_producto, name="eliminar"),
+    path('restar/<id>', restar_producto, name="restar"),
+    path('limpiar/', limpiar_carrito, name="limpiar"),
     
 ]

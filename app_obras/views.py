@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from .models import Obra
+from .models import Obra, Boleta, detalle_boleta
 from .forms import ObraForm, RegistroUserForm
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.decorators import login_required
+from app_obras.compra import Carrito
 def index(request):
 	obras= Obra.objects.all()
 	
@@ -75,3 +76,53 @@ def mostrar(request):
     return render(request, 'mostrar.html', datos)
 
 # Create your views here.
+
+
+
+def agregar_producto(request,id):
+    carrito_compra= Carrito(request)
+    obra = Obra.objects.get(idObra=id)
+    carrito_compra.agregar(obra=obra)
+    return redirect('mostrar')
+
+def eliminar_producto(request, id):
+    carrito_compra= Carrito(request)
+    obra = Obra.objects.get(idObra=id)
+    carrito_compra.eliminar(obra=obra)
+    return redirect('mostrar')
+
+def restar_producto(request, id):
+    carrito_compra= Carrito(request)
+    obra = Obra.objects.get(idObra=id)
+    carrito_compra.restar(obra=obra)
+    return redirect('mostrar')
+
+def limpiar_carrito(request):
+    carrito_compra= Carrito(request)
+    carrito_compra.limpiar()
+    return redirect('mostrar')    
+
+
+def generarBoleta(request):
+    precio_total=0
+    for key, value in request.session['carrito'].items():
+        precio_total = precio_total + int(value['precio']) * int(value['cantidad'])
+    boleta = Boleta(total = precio_total)
+    boleta.save()
+    productos = []
+    for key, value in request.session['carrito'].items():
+            producto = Obra.objects.get(idObra = value['obra_id'])
+            cant = value['cantidad']
+            subtotal = cant * int(value['precio'])
+            detalle = detalle_boleta(id_boleta = boleta, id_producto = producto, cantidad = cant, subtotal = subtotal)
+            detalle.save()
+            productos.append(detalle)
+    datos={
+        'productos':productos,
+        'fecha':boleta.fechaCompra,
+        'total': boleta.total
+    }
+    request.session['boleta'] = boleta.id_boleta
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return render(request, 'detallecarrito.html',datos)
