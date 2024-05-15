@@ -8,6 +8,6 @@ PASSWORD: admin123
 
 --pip install Django
 
---pip istall pillow
+--pip install pillow
 
 ----------------------------------
