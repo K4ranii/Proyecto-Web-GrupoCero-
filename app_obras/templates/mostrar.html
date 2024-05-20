@@ -119,8 +119,8 @@
                     <div class="card-body">
                       <h4 class="card-title"> Código : {{ obra.idObra }}</h4>
                       <p class="card-text">
-                        Nombre : {{ obra.titulo }}<br>
-                        Marca: {{ obra.autor }}<br>
+                        Título : {{ obra.titulo }}<br>
+                        Autor: {{ obra.autor }}<br>
                         Precio: ${{ obra.precio }}<br>
                       </p>
                       <a href="{% url 'agregar' obra.idObra %}" class="btn btn-success">Agregar al carro</a>
