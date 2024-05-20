@@ -6,8 +6,9 @@ PASSWORD: admin123
 
 ----------------------------------
 
---pip install Django
-
---pip install pillow
+pip install pillow
+pip install django
+pip install transbank-sdk
+pip install djangorestframework
 
 ----------------------------------
